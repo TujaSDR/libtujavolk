@@ -10,6 +10,9 @@
 #define tujavolk_h
 
 #include <stdint.h>
+#include <volk/volk.h>
+
+//void volk_32fc_iqsum_32f_neon(float* outputVector, const lv_32fc_t* inputVector, unsigned int num_points);
 
 // int32_t to float32
 void volk_32i_s32f_convert_32f_neon(float* outputVector,
@@ -23,18 +26,13 @@ void volk_32f_s32f_convert_32i_neon(int32_t* outputVector,
                                     const float scalar,
                                     unsigned int num_points);
 
-/* ALREADY NEON in libvolk
-void volk_16i_s32f_convert_32f(float* outputVector,
-                               const int16_t* inputVector,
-                               const float scalar,
-                               unsigned int num_points);
-*/
-
-// float32 to int16_t
+// float32 to int16_t (the counterpart is already in libvolk)
 void volk_32f_s32f_convert_16i_neon(int16_t* outputVector,
                                const float* inputVector,
                                const float scalar,
                                unsigned int num_points);
 
+
+// TODO write an add I+Q thing
 
 #endif /* tujavolk_h */

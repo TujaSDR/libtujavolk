@@ -9,7 +9,7 @@ cc = meson.get_compiler('c')
 
 volk_dep = dependency('volk')
 
-c_args = ['-mcpu=cortex-a53', '-mfpu=neon-vfpv4', '-mfloat-abi=hard', '-funsafe-math-optimizations',]
+c_args = ['-mcpu=cortex-a53', '-mfpu=neon-fp-armv8', '-mfloat-abi=hard', '-funsafe-math-optimizations',]
 add_global_arguments(c_args, language : 'c')
 
 executable('tester',
